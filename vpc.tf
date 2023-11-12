@@ -12,7 +12,7 @@ resource "aws_vpc" "tf-ecom" {
 # create pub subnet - AZ -A
 resource "aws_subnet" "tf-ecom-pub-sn-A" {
   vpc_id     = aws_vpc.tf-ecom.id
-  cidr_block = "192.168.0.0/23"
+  cidr_block = "192.168.0.0/24"
   availability_zone = "us-east-2a"
   map_public_ip_on_launch = "true"
   tags = {
@@ -23,7 +23,7 @@ resource "aws_subnet" "tf-ecom-pub-sn-A" {
 # create pub subnet - AZ -B
 resource "aws_subnet" "tf-ecom-pub-sn-B" {
   vpc_id     = aws_vpc.tf-ecom.id
-  cidr_block = "192.168.0.0/24"
+  cidr_block = "192.168.5.0/24"
   availability_zone = "us-east-2b"
   map_public_ip_on_launch = "true"
   tags = {
@@ -34,7 +34,7 @@ resource "aws_subnet" "tf-ecom-pub-sn-B" {
 # create pvt subnet - AZ -A
 resource "aws_subnet" "tf-ecom-pvt-sn-A" {
   vpc_id     = aws_vpc.tf-ecom.id
-  cidr_block = "192.168.1.0/24"
+  cidr_block = "192.168.2.0/24"
   availability_zone = "us-east-2a"
   map_public_ip_on_launch = "false"
   tags = {
