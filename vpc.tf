@@ -36,7 +36,7 @@ resource "aws_subnet" "tf-ecom-pub-sn-A" {
   vpc_id     = aws_vpc.tf-ecom.id
   cidr_block = "192.168.0.0/24"
   availability_zone = "us-east-2a"
-  map_public_ip_on_launch = "true"
+  map_public_ip_on_launch = "false"
   tags = {
     Name = "ecom-pvt-subnet-A"
   }
